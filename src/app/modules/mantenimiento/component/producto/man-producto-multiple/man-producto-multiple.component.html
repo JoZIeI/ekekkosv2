@@ -1,0 +1,58 @@
+<!-- <div class="container">
+    <form [formGroup]="form">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Id Categoria</th>
+                    <th>
+                        <button (click)="addproducto()" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container formArrayName="productos">
+                    <ng-container *ngFor="let mesa of productoArrayForm.controls let i = index">
+                        <tr [formGroupName]="i">
+                            <td>{{ i + 1 }}</td>
+                            <td>
+                                <input formControlName="productoId" class="form-control" type="text">
+                            </td>
+                            <td>
+                                <input formControlName="nombre" class="form-control" type="text">
+                            </td>
+                            <td>
+                                <input formControlName="precio" class="form-control" type="text">
+                            </td>
+                            <td>
+                                <input formControlName="categoriaId" class="form-control" type="text">
+                            </td>
+                            <td>
+                                <button (click)="removemesa(i)" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-container>
+
+                </ng-container>
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <button [disabled]="form.invalid" (click)="save()" class="btn btn-primary btn-sm "> Guardar
+                            <i class="fas fa-save"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div> -->

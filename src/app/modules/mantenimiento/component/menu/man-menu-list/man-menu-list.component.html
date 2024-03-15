@@ -1,0 +1,165 @@
+<div class="container-fluid px-4 mt-5">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">
+            <h1 class="mt-4">MANTENIMIENTO DE MENU</h1>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="myFormFilter">
+
+                <div class="card bg-light mb-3">
+                    <div class="card-header">BUSQUEDA</div>
+                    <div class="card-body">
+                        <div class="row">                            
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Nombre</label>
+                                    <input formControlName="nombre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Descripcion</label>
+                                    <input formControlName="descripcion" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Icono</label>
+                                    <input formControlName="icono" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Dato</label>
+                                    <input formControlName="dato" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Url</label>
+                                    <input formControlName="url" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Padre</label>
+                                    <input formControlName="padre" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Estado</label>
+                                    <input formControlName="estado" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Usuario Creador</label>
+                                    <input formControlName="usuariocrea" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="">Usuario Actualiza</label>
+                                    <input formControlName="usuarioactua" type="text" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <br>
+                                    <button (click)="filtrar()" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm">
+                                        <i class="fas fa-broom"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Icono</th>
+                        <th>Data</th>
+                        <th>Url</th>
+                        <th>Padre</th>
+                        <th>Estado</th>
+                        <th>Usuario Crea</th>
+                        <th>Usuario Actualiza</th>
+                        <th>
+                            <button (click)="crearmenu(modalEdit)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let menu of menus">
+                        <td> {{menu.idMenu}} </td>
+                        <td> {{menu.nombre}} </td>
+                        <td> {{menu.descripcion}} </td> 
+                        <td> {{menu.icono}} </td>                        
+                        <td> {{menu.datatarget}} </td> 
+                        <td> {{menu.url}} </td> 
+                        <td> {{menu.padre}} </td> 
+                        <td> {{menu.idEstado}} </td> 
+                        <td> {{menu.usuarioCrea}} </td> 
+                        <td> {{menu.usuarioActualiza}} </td> 
+                        <td>
+                            <button (click)="editarmenu(modalEdit,menu)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button (click)="eliminarRegistro(menu.idMenu)" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-xs-8 col-8">
+
+                    <pagination (pageChanged)="changePage($event)" [totalItems]="totalItems"
+                        [itemsPerPage]="itemsPerPage" [previousText]="'Anterior'" [nextText]="'Siguiente'">
+                    </pagination>
+
+                </div>
+
+                <div class="col-xs-4 col-4">
+
+                    <select (change)="changeItemsPerPage()" [(ngModel)]="itemsPerPage" class="form-select">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<ng-template #modalEdit>
+    <app-man-menu-register [title]="titleModal" [menu]="menuSelected" [accion]="accionModal"
+        (closeModalEmmit)="getCloseModalEmmit($event)"></app-man-menu-register>
+</ng-template>

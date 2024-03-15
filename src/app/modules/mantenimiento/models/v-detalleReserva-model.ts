@@ -1,0 +1,33 @@
+export class VdetalleReserva {
+    id: number =0;
+    apMaterno: string = "";
+    apPaterno: string = "";
+    descriccionDocumento: string = "";
+    descripcionReserva: string = "";
+    forma: string = "";
+    horaFechaLlegada: string = "";
+    horaFechaReserva: string = "";
+    reservaId: number =0;
+    idCliente: number =0;
+    idEmpresa: number =0;
+    motoPagar: number =0;
+    names: string = "";
+    nroComensal: string = "";
+    nroAsientos: string = "";
+    ruc: string = "";
+    razonSocial: string = "";
+    idMetodoPago: number =0;
+    idMesa: number =0;
+    comensales: string = "";
+    montoPagar: number =0;
+    idProducto: number =0;
+    categoriDescrip: string = "";
+    descProducto: string = "";
+    idProducto1: number =0;
+    idCategoria: number =0;
+    idScategoria: number =0;
+    nombreProducto: string = "";
+    precioProducto: number =0;
+    descSubProducto: string = "";
+    idReserva: number =0;
+}

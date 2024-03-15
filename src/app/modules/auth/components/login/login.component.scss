@@ -1,0 +1,36 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+body {
+    background-color: #433c2b;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c8.alamy.com/compes/d9mggr/horno-pollo-rotisserie-espanol-shop-polleria-cambrils-cataluna-espana-d9mggr.jpg");
+    
+}
+
+
+  
+
+  
+
+  .bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+  }
+
+.h-custom {
+height: calc(100% - 73px);
+}
+
+
+
+
+
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}

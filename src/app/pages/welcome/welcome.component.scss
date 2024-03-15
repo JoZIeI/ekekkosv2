@@ -1,0 +1,19 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  header {
+    background: #fff;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    // Añade aquí más estilos para tu sidebar
+  }
+  
